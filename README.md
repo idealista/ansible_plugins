@@ -1,5 +1,7 @@
 ![Logo](https://raw.githubusercontent.com/idealista/ansible_plugins/master/logo.gif)
 
+[![Build Status](https://travis-ci.org/idealista/ansible_plugins.png)](https://travis-ci.org/idealista/ansible_plugins)
+
 # Ansible Plugins
 
 These are some useful ansible plugins.
