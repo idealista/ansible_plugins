@@ -1,5 +1,8 @@
 - name: FILTER PLUGINS | In_list
   include_tasks: in_list.yml
 
-- name: FILTER PLUGINS | Not_ni_list
+- name: FILTER PLUGINS | Not_in_list
   include_tasks: not_in_list.yml
+
+- name: FILTER PLUGINS | Flatten
+  include_tasks: flatten_collection.yml

@@ -1,0 +1,17 @@
+- set_fact:
+    a_properties_string: |
+      main_property=1
+      nested.property=true
+
+      # Final
+      nested.final.property=right
+
+- set_fact:
+    property_dict: "{{ a_properties_string | parse_properties }}"
+
+- assert:
+    that:
+      - property_dict|length == 3
+      - property_dict['main_property'] == 1
+      - property_dict['nested.final.property'] == "right"
+      - property_dict['nested.property'] == True
