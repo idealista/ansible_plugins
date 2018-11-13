@@ -3,3 +3,6 @@
 
 - name: FILTER PLUGINS | Not_ni_list
   include_tasks: not_in_list.yml
+
+- name: FILTER PLUGINS | Flatten
+  include_tasks: flatten_collection.yml

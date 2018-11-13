@@ -1,0 +1,17 @@
+- set_fact:
+    a_dict: 
+      main_property: 1
+      nested:
+        property: true
+        final:
+          property: right
+
+- set_fact:
+    flatten_dict: "{{ a_dict | flatten_collection }}"
+
+- assert:
+    that:
+      - flatten_dict|length == 3
+      - flatten_dict['main_property'] == 1
+      - flatten_dict['nested.final.property'] == "right"
+      - flatten_dict['nested.property'] == true

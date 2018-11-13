@@ -7,3 +7,5 @@
       include_tasks: collection.yml
     - name: FILTER PLUGINS | List
       include_tasks: list.yml
+    - name: FILTER PLUGINS | String
+      include_tasks: string.yml
