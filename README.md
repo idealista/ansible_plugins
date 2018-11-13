@@ -49,6 +49,9 @@ The provided plugins are:
   - [Collection related](src/filter/plugins/collection.py):
     - in_list
     - not_in_list
+    - flatten_collection
+  - [String related](src/filter/plugins/string.py):
+    -parse_properties
 
 An example of **in_list** plugin filter:
 
