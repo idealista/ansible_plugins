@@ -1,0 +1,17 @@
+- set_fact:
+    a_list: 
+      - 'one'
+      - 'two'
+      - 'three'
+      - 'four'
+
+- set_fact:
+    filter_cond: "lambda k: k.startswith('t')"
+
+- set_fact:
+    filtered_list: "{{ a_list | filter_evaluated(filter_cond) }}"
+
+- assert:
+    that:
+      - filtered_list|length == 2
+      - filtered_list == ['two', 'three']

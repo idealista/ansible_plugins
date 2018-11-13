@@ -1,0 +1,18 @@
+- set_fact:
+    list:
+      - name: 'one'
+        value: 1
+      - name: 'two'
+        value: 2
+      - name: 'three'
+        value: 3
+
+- set_fact:
+    filter_list: ['one', 'two']
+
+- set_fact:
+    filtered_not_in_list: "{{ list | not_in_list('name', filter_list) }}"
+
+- assert:
+    that:
+      - filtered_not_in_list|length == 1

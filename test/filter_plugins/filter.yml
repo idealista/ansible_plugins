@@ -1,0 +1,14 @@
+- set_fact:
+    a_list: 
+      - 'one'
+      - 'two'
+      - 'three'
+      - ''
+
+- set_fact:
+    filtered_list_none: "{{ a_list | filter }}"
+
+- assert:
+    that:
+      - filtered_list_none|length == 3
+      - filtered_list_none == ['one', 'two', 'three']

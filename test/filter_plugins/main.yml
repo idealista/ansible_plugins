@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  become: false
+
+  tasks:
+    - name: FILTER PLUGINS | Collection
+      include_tasks: collection.yml
+    - name: FILTER PLUGINS | List
+      include_tasks: list.yml

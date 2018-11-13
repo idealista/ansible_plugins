@@ -1,0 +1,17 @@
+- set_fact:
+    a_list: 
+      - ['one', 1]
+      - ['two', 2]
+      - ['three', 3]
+
+- set_fact:
+    key_list: ['name', 'value']
+
+- set_fact:
+    zipped_list: "{{ a_list | map('zip_dict', key_list) | list }}"
+
+- assert:
+    that:
+      - zipped_list|length == 3
+      - zipped_list|map(attribute='name') | list == ['one', 'two', 'three']
+      - zipped_list|map(attribute='value') | list == [1, 2, 3]

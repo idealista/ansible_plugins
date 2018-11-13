@@ -1,0 +1,13 @@
+- set_fact:
+    a_list: 
+      - ['one', 1]
+      - ['two', 2]
+      - ['three', 3]
+
+- set_fact:
+    flatten_list: "{{ a_list | flatten }}"
+
+- assert:
+    that:
+      - flatten_list|length == 6
+      - flatten_list == ['one', 1, 'two', 2, 'three', 3]

@@ -1,0 +1,11 @@
+- name: FILTER PLUGINS | Zip_dict
+  include_tasks: zip_dict.yml
+
+- name: FILTER PLUGINS | Flatten
+  include_tasks: flatten.yml
+
+- name: FILTER PLUGINS | Filter
+  include_tasks: filter.yml
+
+- name: FILTER PLUGINS | Filter_evaluated
+  include_tasks: filter_evaluated.yml
